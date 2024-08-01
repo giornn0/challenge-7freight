@@ -1,0 +1,47 @@
+version: "3.7"
+services:
+    app:
+        build:
+            args:
+                user: challenge
+                uid: 1000
+            context: ./
+            dockerfile: Dockerfile
+        image: challenge:latest
+        container_name: challenge-app
+        restart: unless-stopped
+        working_dir: /var/www/
+        depends_on:
+            - db
+            - nginx
+        volumes:
+            - ./:/var/www
+            - ./vendor:/var/www/vendor
+        networks:
+            - challenge
+    db:
+        image: docker.io/library/mysql:8.0
+        container_name: challenge-db
+        restart: unless-stopped
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+        volumes:
+            - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+        ports:
+            - ${DB_PORT}:3306
+        networks:
+            - challenge
+    nginx:
+        image: docker.io/library/nginx:alpine
+        container_name: challenge-nginx
+        restart: unless-stopped
+        ports:
+            - ${APP_SERVE_PORT}:80
+        volumes:
+            - ./:/var/www
+            - ./docker-compose/nginx:/etc/nginx/conf.d/
+        networks:
+            - challenge
+networks:
+    challenge:
+        driver: bridge
