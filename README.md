@@ -30,14 +30,11 @@ podman exec -it challenge-app bash && php artisan migrate --seed && exit
 
 1. Make sure you have the next tools installed:
 
-| Name           | Version         |
-| -------------- | --------------- |
-| php            | > 8.2           |
-| -------------- | --------------- |
-| composer       | > 2.7           |
-| -------------- | --------------- |
-| mysql          | 8.0             |
-| -------------- | --------------- |
+| Name     | Version |
+| -------- | ------- |
+| php      | > 8.2   |
+| composer | > 2.7   |
+| mysql    | 8.0     |
 
 2. Install dependencies:
 
