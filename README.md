@@ -1,27 +1,49 @@
 ## Setup
 
-This guide is specific for linux SO.
+This guide is specific for Linux SO.
 
-1. Copy the .env.example.
+1. Clone this repository
 
 ```
-cp .env.example .env
+git clone git@github.com:giornn0/challenge-7freight.git
 ```
+
+Now choose between continuing the setup with docker or with native tools.
 
 ### Docker/Podman
 
 Follow the list.
 
-1. Build app image and setup the necessary containers:
+1. Copy the .env.example
+
+```
+cp .env.example .env
+```
+
+> Don't change anything inside this file
+
+2. Build app image and setup the necessary containers:
 
 ```
 podman-compose up -d
 ```
 
-2. Run database migrations and seeders:
+3. Get inside the app container:
 
 ```
-podman exec -it challenge-app bash && php artisan migrate --seed && exit
+podman exec -it challenge-app bash
+```
+
+4. Run database migrations and seeders:
+
+```
+php artisan migrate --seed
+```
+
+5. Exit the app container:
+
+```
+exit
 ```
 
 > If you have docker, replace podman with docker, and podman-compose with docker-compose.
@@ -36,13 +58,21 @@ podman exec -it challenge-app bash && php artisan migrate --seed && exit
 | composer | > 2.7   |
 | mysql    | 8.0     |
 
-2. Install dependencies:
+2. Copy the .env.example.local-sql:
+
+```
+cp .env.example.local-sql .env
+```
+
+> Inside this file, you need to put some **credentials for your mysql access**. Change **DB_USERNAME** and **DB_PASSWORD** accordingly
+
+3. Install dependencies:
 
 ```
 composer install
 ```
 
-3. Run database migrations and seeders:
+4. Run database migrations and seeders:
 
 ```
 php artisan migrate --seed
