@@ -14,9 +14,6 @@ services:
     depends_on:
       - db
       - nginx
-    volumes:
-      - ./:/var/www
-      - ./vendor:/var/www/vendor
     networks:
       - challenge
   db:

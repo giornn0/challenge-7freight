@@ -1,0 +1,161 @@
+{
+	"_type": "export",
+	"__export_format": 4,
+	"__export_date": "2024-08-01T20:07:46.161Z",
+	"__export_source": "insomnia.desktop.app:v9.0.0",
+	"resources": [
+		{
+			"_id": "req_0e3e9058e4bd40d2b9c13d2b9677303b",
+			"parentId": "wrk_541588f0481841a386a0e665e9ecd67a",
+			"modified": 1722538711376,
+			"created": 1722534630017,
+			"url": "http://localhost:8000/api/classes/book",
+			"name": "Booked Class",
+			"description": "",
+			"method": "DELETE",
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_3590a078afa449cb8c4df0b8a881a437",
+						"name": "",
+						"value": "",
+						"description": ""
+					}
+				]
+			},
+			"preRequestScript": "",
+			"parameters": [
+				{
+					"id": "pair_269df36434a44efc9a2694a3a5a29eaf",
+					"name": "studentId",
+					"value": "1",
+					"description": ""
+				},
+				{
+					"id": "pair_7e98475701c44cf4b149ff2dee19014a",
+					"name": "classBlockId",
+					"value": "18",
+					"description": ""
+				}
+			],
+			"headers": [
+				{ "name": "Content-Type", "value": "multipart/form-data" },
+				{ "name": "User-Agent", "value": "insomnia/9.0.0" }
+			],
+			"authentication": {},
+			"metaSortKey": -1722167519695.5,
+			"isPrivate": false,
+			"pathParameters": [],
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "wrk_541588f0481841a386a0e665e9ecd67a",
+			"parentId": null,
+			"modified": 1722527847362,
+			"created": 1722527808533,
+			"name": "Challenge 7LFreight",
+			"description": "",
+			"scope": "collection",
+			"_type": "workspace"
+		},
+		{
+			"_id": "req_a7ff08bd8a20434c845227a502f00450",
+			"parentId": "wrk_541588f0481841a386a0e665e9ecd67a",
+			"modified": 1722538719132,
+			"created": 1722533585225,
+			"url": "http://localhost:8000/api/classes/book",
+			"name": "Book ClassBlock",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_4ed78fde735947fc9aefb1ffa717cb1c",
+						"name": "studentId",
+						"value": "1",
+						"description": ""
+					},
+					{
+						"id": "pair_b506b80b419e493dab06084b1038250a",
+						"name": "classBlockId",
+						"value": "18",
+						"description": ""
+					}
+				]
+			},
+			"preRequestScript": "",
+			"parameters": [],
+			"headers": [
+				{ "name": "Content-Type", "value": "multipart/form-data" },
+				{ "name": "User-Agent", "value": "insomnia/9.0.0" }
+			],
+			"authentication": {},
+			"metaSortKey": -1722287630038,
+			"isPrivate": false,
+			"pathParameters": [],
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c05b794d1f9d47c89a0948d09f51fbaa",
+			"parentId": "wrk_541588f0481841a386a0e665e9ecd67a",
+			"modified": 1722533606962,
+			"created": 1722527850723,
+			"url": "http://localhost:8000/api/classes/schedule",
+			"name": "Availables Classes",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"preRequestScript": "",
+			"parameters": [],
+			"headers": [{ "name": "User-Agent", "value": "insomnia/9.0.0" }],
+			"authentication": {},
+			"metaSortKey": -1722527850723,
+			"isPrivate": false,
+			"pathParameters": [],
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "env_686d41dba7f14d9571202e04c2189417470df88f",
+			"parentId": "wrk_541588f0481841a386a0e665e9ecd67a",
+			"modified": 1722527808535,
+			"created": 1722527808535,
+			"name": "Base Environment",
+			"data": {},
+			"dataPropertyOrder": null,
+			"color": null,
+			"isPrivate": false,
+			"metaSortKey": 1722527808535,
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_686d41dba7f14d9571202e04c2189417470df88f",
+			"parentId": "wrk_541588f0481841a386a0e665e9ecd67a",
+			"modified": 1722527808535,
+			"created": 1722527808535,
+			"name": "Default Jar",
+			"cookies": [],
+			"_type": "cookie_jar"
+		}
+	]
+}
+
