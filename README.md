@@ -77,10 +77,22 @@ composer install
 ```
 php artisan migrate --seed
 ```
+4. Run application:
+
+```
+php artisan serve
+```
 
 ## Explore
+Check the next requests with their corresponding method:
+### GET [Available Classes](http://localhost:8000/api/classes/schedule).
+- Response: { data: Array<{ nameClass: { start: Time, end: Time, classBlockId: int } }>}
+### POST [Book Class Block](http://localhost:8000/api/classes/book).
+- Body: { sudentId: int, classBlockId: int}
+### DELETE [Booked Class](http://localhost:8000/api/classes/book).
+- QUeryParameters: { sudentId: int, classBlockId: int}
 
-For testing the endpoints with Insomnia use the provided challenge-insomnia-collection.json
+We also provide an Insomnia json (challenge-insomnia-collection.json) for testing the endpoint.
 
 ## Possible Errors
 
